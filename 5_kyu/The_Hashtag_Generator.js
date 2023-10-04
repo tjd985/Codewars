@@ -35,7 +35,10 @@ function generateHashtag(str) {
       continue;
     }
     result += strArr[i][0].toUpperCase() + strArr[i].slice(1);
+    if (result.length > 140) {
+      return false;
+    }
   }
 
-  return result.length > 140 ? false : result;
+  return result;
 }
